@@ -1,0 +1,92 @@
+/* Container removed - only the grid remains */
+.card-only-grid {
+    display: grid;
+    /* Strictly 3 cards per row */
+    grid-template-columns: repeat(3, 1fr);
+    /* Strictly 3 rows */
+    grid-template-rows: repeat(3, auto);
+    gap: 10px;
+    /* Narrow width to prevent "wide" look */
+    width: 97.5%;
+    position: relative;
+    margin: 20px auto;
+}
+
+.shelf-card {
+    border: 1px solid #f0f0f0;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.shelf-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.img-wrapper {
+    height: 230px;
+    width: 100%;
+}
+
+.img-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+.item-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.price-box {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.current {
+    font-weight: bold;
+    font-size: 16px;
+    color: #212121;
+}
+
+.previous {
+    text-decoration: line-through;
+    color: #878787;
+    font-size: 13px;
+}
+
+.discount-text {
+    color: #388e3c;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Update the .product-shelf in ProductShowcase.css */
+.product-shelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Reduced from 200px */
+    gap: 10px;
+}
+
+@media (max-width: 480px) {
+    .product-shelf {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 items per row on very small phones */
+    }
+    
+    .showcase-container {
+        width: 98%;
+        margin-left: 1%;
+        top: auto;
+        position: relative;
+    }
+}

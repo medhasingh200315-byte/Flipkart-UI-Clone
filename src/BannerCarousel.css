@@ -1,0 +1,82 @@
+.carousel-section {
+    position: relative; /* Change from absolute to relative */
+    width: 98.7%;
+    height: 290px;
+    margin: 9px 10px; /* This naturally pushes it down from categories */
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the area without stretching */
+}
+
+/* Customizing Swiper Arrows */
+/* Customizing Swiper Arrows */
+.swiper-button-next, 
+.swiper-button-prev {
+    /* 1. Force a small, specific size so it doesn't cover all space */
+    width: 40px !important;
+    height: 80px !important;
+    background-color: white;
+    
+    /* 2. Shape and Shadow */
+    border-radius: 4px; /* Makes it a small rounded square */
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    
+    /* 3. Center vertically on the edge */
+    top: 55% !important;
+    transform: translateY(-50%);
+    
+    /* 4. Color of the arrow icon */
+    color: #333 !important;
+    z-index: 10;
+}
+
+/* 5. Position them exactly at the left and right edges */
+.swiper-button-prev {
+    left: 0 !important;
+}
+
+.swiper-button-next {
+    right: 0 !important;
+}
+
+/* 6. Make the actual arrow icon inside much smaller */
+.swiper-button-next::after, 
+.swiper-button-prev::after {
+    font-size: 6px !important; /* Smaller arrow icon */
+
+}
+
+/* Hover effect to make it feel interactive */
+.swiper-button-next:hover, 
+.swiper-button-prev:hover {
+    background-color: #f1f1f1;
+}
+.swiper-pagination-bullet-active {
+    background: #2874f0 !important; /* Matches your header blue */
+}
+
+/* Media Query for Tablet Devices (Screens smaller than 768px) */
+@media (max-width: 768px) {
+    .carousel-section {
+        height: 150px; /* Shorter height for mobile */
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none; /* Hide arrows on mobile to save space (use touch swipe) */
+    }
+}
+
+/* Media Query for Mobile Devices (Screens smaller than 480px) */
+@media (max-width: 480px) {
+    .carousel-section {
+        height: 120px; /* Even shorter height for small phones */
+        margin: 3px 0;
+    }
+}
